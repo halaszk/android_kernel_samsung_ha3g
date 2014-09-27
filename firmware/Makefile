@@ -158,16 +158,16 @@ fw-shipped-$(CONFIG_SENSORS_SSP_STM) += ssp_H_3G.fw ssp_H_3G_rev5.fw
 fw-shipped-$(CONFIG_SENSORS_SSP) += ssp_crashed.fw
 
 TSPFIRMWARE_DIRECTORY = $(srctree)/firmware/tsp_atmel
-ifeq ($(shell test -d $(TSPFIRMWARE_DIRECTORY) && echo yes),yes)
+#ifeq ($(shell test -d $(TSPFIRMWARE_DIRECTORY) && echo yes),yes)
 fw-shipped-$(CONFIG_TOUCHSCREEN_MXT540E) += tsp_atmel/mXT540E.fw
 fw-shipped-$(CONFIG_TOUCHSCREEN_ATMEL_MXT540S) += tsp_atmel/mXT540Sg.fw tsp_atmel/mXT540Si.fw
 fw-shipped-$(CONFIG_TOUCHSCREEN_ATMEL_MXT1664S) += tsp_atmel/mXT1664S_v.fw tsp_atmel/mXT1664S_n.fw
-else
-$(warning '$(TSPFIRMWARE_DIRECTORY)' directory dose not exist)
-endif
+#else
+#$(warning '$(TSPFIRMWARE_DIRECTORY)' directory dose not exist)
+#endif
 
 TSPFIRMWARE_DIRECTORY = $(srctree)/firmware/tsp_synaptics
-ifeq ($(shell test -d $(TSPFIRMWARE_DIRECTORY) && echo yes),yes)
+#ifeq ($(shell test -d $(TSPFIRMWARE_DIRECTORY) && echo yes),yes)
 fw-shipped-$(CONFIG_TOUCHSCREEN_SYNAPTICS_I2C_RMI) += tsp_synaptics/synaptics_a0_h.fw
 fw-shipped-$(CONFIG_TOUCHSCREEN_SYNAPTICS_I2C_RMI) += tsp_synaptics/synaptics_a0_h_no_tr.fw
 ifdef CONFIG_CHAGALL
@@ -176,9 +176,9 @@ else
 fw-shipped-$(CONFIG_TOUCHSCREEN_SYNAPTICS_DSX_I2C) += tsp_synaptics/synaptics_v2.fw
 fw-shipped-$(CONFIG_TOUCHSCREEN_SYNAPTICS_DSX_I2C) += tsp_synaptics/synaptics_v2_g2.fw
 endif
-else
-$(warning '$(TSPFIRMWARE_DIRECTORY)' directory dose not exist)
-endif
+#else
+#$(warning '$(TSPFIRMWARE_DIRECTORY)' directory dose not exist)
+#endif
 
 fw-shipped-all := $(fw-shipped-y) $(fw-shipped-m) $(fw-shipped-)
 
