@@ -1974,7 +1974,7 @@ static int s6e3fa0_probe(struct mipi_dsim_device *dsim)
 	lcd->ldi_enable = 1;
 	dev_info(&lcd->ld->dev, "%s lcd panel driver has been probed.\n", __FILE__);
 
-	s6e3fa0_power(lcd);
+	s6e3fa0_power(lcd, FB_BLANK_UNBLANK);
 
 	return 0;
 

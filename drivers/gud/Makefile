@@ -19,8 +19,7 @@ mcKernelApi-objs := MobiCoreKernelApi/main.o \
 		MobiCoreKernelApi/connection.o
 
 # Release mode by default
-ccflags-y := -DNDEBUG
-ccflags-y := -include $(srctree)/$(GUD_ROOT_FOLDER)/build_tag.h
+ccflags-y := -DNDEBUG -include $(srctree)/$(GUD_ROOT_FOLDER)/build_tag.h
 ccflags-y += -Wno-declaration-after-statement
 
 ccflags-$(CONFIG_MOBICORE_DEBUG) += -DDEBUG
